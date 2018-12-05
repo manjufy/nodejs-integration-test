@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-integration-test",
+  "version": "1.0.0",
+  "description": "NodeJS Integration Test Example",
+  "main": "app.js",
+  "scripts": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/manjufy/nodejs-integration-test.git"
+  },
+  "keywords": [
+    "nodejs",
+    "integration",
+    "test"
+  ],
+  "author": "Manjunath Reddy <manju16832003@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manjufy/nodejs-integration-test/issues"
+  },
+  "homepage": "https://github.com/manjufy/nodejs-integration-test#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
