@@ -4,6 +4,7 @@
   "description": "NodeJS Integration Test Example",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "tests"
   },
   "repository": {
