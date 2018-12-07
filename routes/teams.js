@@ -4,7 +4,7 @@ const router = express.Router()
 exports.router = router
 
 router.get('/', (req, res) => {
-    res.json(teams())
+    res.send(teams())
 })
 
 const teams = () => ([

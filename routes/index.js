@@ -4,10 +4,10 @@ const router = express.Router()
 module.exports = router
 
 router.get('/', (req, res) => {
-    return res.json({
+    return res.send({
         status: 'SUCCESS',
         code: 200,
-        message: ''
+        message: 'To use this API, try accessing http://localhost:3000/api/{route}'
     })
 })
 

@@ -4,7 +4,7 @@ const router = express.Router()
 exports.router = router
 
 router.get('/', (req, res) => {
-    res.json(races())
+    res.send(races())
 })
 
 const races = () => ([
