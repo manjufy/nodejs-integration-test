@@ -12,5 +12,5 @@ router.get('/', (req, res) => {
 })
 
 router.use('/teams', require('./teams').router)
-// router.use('/races', require('./races').router)
-// router.use('/drivers', require('./drivers').router)
+router.use('/races', require('./races').router)
+router.use('/drivers', require('./drivers').router)
