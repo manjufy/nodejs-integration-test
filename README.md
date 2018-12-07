@@ -1,4 +1,4 @@
-# Nodejs Integration Tests Example
+# Nodejs Integration Tests Sample
 
 ### Run
 
@@ -16,3 +16,7 @@ http://localhost:3000/api/races
 npm install -g mocha  // install mocha globally
 npm test
 ```
+
+### References
+
+https://blog.codeship.com/testing-http-apis-supertest/
