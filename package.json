@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon app.js",
     "test:integration": "NODE_ENV=test mocha test/integration/*.js --timeout 10000 --exit",
+    "test:unit": "NODE_ENV=test mocha test/unit/*.js --timeout 10000 --exit",
     "test-coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec"
   },
   "repository": {

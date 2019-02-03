@@ -1,5 +1,19 @@
 # Nodejs TDD Test Starter
 
+# Why Testing is Important
+
+- Brings Quality
+- Assurance
+- Enables continuous delivery
+
+## Types of tests
+
+- Unit: Test specific aspect of your code
+- Integration: Test components to work as they should
+- Functional: Test final product
+
+Lets consider the following API example to do integration and unit tests.
+
 ## API Structure
 
 ```
