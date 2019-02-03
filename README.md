@@ -14,6 +14,14 @@
 
 Lets consider the following API example to do integration and unit tests.
 
+## Test-Driven-Development (TDD)
+
+Developing software while basing on tests. Development is based on tests.
+
+## Behaviour-Driven-Design (BDD)
+
+Which in fact is based on TDD, but test driven by behaviour, specification, they are just better described.
+
 ## API Structure
 
 ```
@@ -48,3 +56,5 @@ By default, Mocha looks for the glob ./test/*.js. - http://mochajs.org/#the-test
 ### References
 
 https://blog.codeship.com/testing-http-apis-supertest/
+
+https://dev.to/areknawo/introduction-to-unit-testing-in-js-2bmk
