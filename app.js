@@ -4,6 +4,8 @@ const express = require('express'),
     bodyParser = require('body-parser')
 
 var multer  =   require('multer');
+var request = require('request')
+var fs = require('fs')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -21,19 +23,35 @@ var storage =   multer.diskStorage({
     }
   });
 
-var upload = multer({ storage : storage}).single('avatar');
-
+  /**
+   * Upload example
+   */
+const upload = multer({ storage : storage}).single('avatar');
 app.post('/api/upload', (req, res) => {
+    let fileName = ''
     upload(req,res,function(err) {
-        // req.file is the `avatar` file
-        // req.body will hold the text fields, if there were any
+        console.log('Filename => ', req.file.originalname)
           if(err) {
               console.log(err)
               return res.end("Error uploading file.");
           }
+
+          fileName = req.file.filename
+          const form_data = {'modelId' : '756de8ac-9f09-4fba-87b0-4f30e7e8f12f', 'category': 'Cat', 'file': fs.createReadStream(`./uploads/${fileName}`)}
+          const options = {
+              url : 'https://app.nanonets.com/api/v2/ImageCategorization/UploadFile/',
+              formData: form_data,
+              headers: {
+                  'Authorization' : 'Basic ' + Buffer.from('jZ-Q-_WvB33TP-tYCRTMq0G31YpV9On_' + ':').toString('base64')
+              }
+          }
+          request.post(options, function(err, httpResponse, body) {
+              console.log('DONE uploading', body)
+          });
           res.end("File is uploaded");
       });
 })
+
 // catch all
 app.use((req, res) => {
     res.status(404).send({
@@ -41,10 +59,6 @@ app.use((req, res) => {
     })
 })
 
-
-
 app.listen(port)
-
 console.log(`RESTful API listening to: ${port}`)
-
 module.exports = app
