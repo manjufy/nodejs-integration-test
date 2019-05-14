@@ -23,6 +23,10 @@ var storage =   multer.diskStorage({
     }
   });
 
+  app.use('/error', (req, res) => {
+    throw Error('New Error....') // should be catched in Line 66
+  });
+
   /**
    * Upload example
    */
@@ -57,6 +61,12 @@ app.use((req, res) => {
     res.status(404).send({
         url: `${req.originalUrl} not found`
     })
+})
+
+app.use((error, req, res, next) => {
+    console.log('Yes we are here....')
+    console.log('ERROR', error);
+    res.status(500).send({error: 'Something went wrong.'})
 })
 
 app.listen(port)
